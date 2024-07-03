@@ -49,7 +49,7 @@ def query_rag(query_text: str):
 def query_finetune(prompt: str):
     try:
         prompt = f"<|start_header_id|>system<|end_header_id|> Answer the question truthfully, you are a medical professional.<|eot_id|><|start_header_id|>user<|end_header_id|> This is the question: {prompt}<|eot_id|>"
-        model = Ollama(model="medical-llama")
+        model = Ollama(model="medical-llama") # Custom Fine-tuned Model
         response_text = model.invoke(prompt)
         print(response_text)
         return response_text
